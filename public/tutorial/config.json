@@ -26,9 +26,41 @@
     "withSidebar": true
   },
   "components": {
+    "welcome": {
+      "type": "markdown",
+      "path": "tutorial/assets/welcome.md",
+      "response": []
+    },
+    "consent":{
+      "type": "markdown",
+      "path": "tutorial/assets/consent.md",
+      "response": [],
+      "nextButtonText": "I agree"
+    },
+    "demographics":{
+      "type": "questionnaire",
+      "response":[
+        {
+          "id": "age",
+          "type": "numerical",
+          "prompt":"What is your age?"
+          },
+          {"id": "health",
+        "type": "likert",
+      "prompt": "How would you rate your health?",
+    "secondaryText": "1 being the worst and 5 the best",
+  "numItems": 5,
+"rightLabel": "Best health",
+"leftLabel": "Worst health",
+"withDivider": true
+}
+        ]
+    }
   },
   "sequence": {
     "order": "fixed",
-    "components": []
+    "components": [
+      "welcome", "consent", "demographics"
+    ]
   }
 }
